@@ -17,7 +17,7 @@
         <h2>Lista de Mangas</h2>
 
         <!-- Contenido de tu tabla aquí -->
-        <?php include('ver_mangas.php'); ?>
+        <?php include('agregar-manga.php'); ?>
 
     </section>
 
@@ -25,7 +25,7 @@
         <h2>Agregar Manga</h2>
 
         <!-- Contenido de tu formulario para agregar mangas aquí -->
-        <?php include('agregar_manga.php'); ?>
+        <?php include('agregar-manga.php'); ?>
 
     </section>
 
