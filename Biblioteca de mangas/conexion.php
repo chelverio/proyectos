@@ -1,5 +1,5 @@
 <?php
-$servername = "tu_servidor";
+$servername = "biblioteca_manga";
 $username = "tu_usuario";
 $password = "tu_contraseña";
 $dbname = "biblioteca_manga";
