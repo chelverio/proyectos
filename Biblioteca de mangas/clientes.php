@@ -8,3 +8,4 @@ $sql = "INSERT INTO clientes (nombre, direccion, email, telefono)
         VALUES ('$nombre_cliente', '$direccion_cliente', '$email_cliente', '$telefono_cliente')";
 // Resto del código para ejecutar la consulta
 ?>
+//oda// 
