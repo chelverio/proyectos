@@ -1,4 +1,4 @@
-<!-- index.php -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,17 +16,30 @@
     <section class="content">
         <h2>Lista de Mangas</h2>
 
-        <!-- Contenido de tu tabla aquí -->
-        <?php include('agregar-manga.php'); ?>
+        
+        <?php include('ver_mangas.php'); ?>
 
     </section>
 
     <section class="content">
         <h2>Agregar Manga</h2>
 
-        <!-- Contenido de tu formulario para agregar mangas aquí -->
-        <?php include('agregar-manga.php'); ?>
+        
+        <form action="" method="post">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" required>
 
+            
+
+            <button type="submit" name="agregar_manga">Agregar Manga</button>
+        </form>
+
+        <?php
+        
+        if (isset($_POST['agregar_manga'])) {
+            include('procesar_agregar_manga.php');
+        }
+        ?>
     </section>
 
 </body>
