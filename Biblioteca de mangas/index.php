@@ -17,7 +17,7 @@
         <h2>Lista de Mangas</h2>
 
         
-        <?php include('ver_mangas.php'); ?>
+        <?php include('procesar_agregar_manga.php'); ?>
 
     </section>
 

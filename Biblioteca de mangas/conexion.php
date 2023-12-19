@@ -1,7 +1,7 @@
 <?php
-$servername = "biblioteca_manga";
-$username = "tu_usuario";
-$password = "tu_contraseña";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "biblioteca_manga";
 
 // Crear la conexión
