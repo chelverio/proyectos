@@ -1,14 +1,11 @@
 <?php
+// servicios.php
+include("db_config.php");
 
-$nombreServicio = "Internet";
-$descripcionServicio = "Conexión de alta velocidad";
-$costoMensual = 30.00;
-
-$sql = "INSERT INTO servicios (nombre_servicio, descripcion, costo_mensual) VALUES ('$nombreServicio', '$descripcionServicio', $costoMensual)";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Servicio agregado con éxito";
-} else {
-    echo "Error al agregar servicio: " . $conn->error;
+function agregarServicio($nombreServicio, $costoMensual) {
+    global $conn;
+    // Implementa la lógica para agregar un servicio
 }
+
+// Agrega más funciones según sea necesario
 ?>
