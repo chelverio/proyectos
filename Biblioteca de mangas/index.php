@@ -1,46 +1,28 @@
+<!-- index.php -->
+<?php
+// Inicia la sesión
+session_start();
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mi Biblioteca de Manga</title>
-</head>
-<body>
+// Verifica si el usuario está autenticado y tiene un rol específico
+if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') {
+    // Sección para administradores
+    echo "<p>Bienvenido, administrador</p>";
+} elseif (isset($_SESSION['rol']) && $_SESSION['rol'] === 'lector') {
+    // Sección para lectores
+    echo "<p>Bienvenido, lector</p>";
+} elseif (isset($_SESSION['rol']) && $_SESSION['rol'] === 'usuario') {
+    // Sección para usuarios
+    echo "<p>Bienvenido, usuario</p>";
+} else {
+    // Mostrar mensaje para usuarios no autenticados
+    echo "<p>Inicia sesión para acceder a las funciones</p>";
+}
+?>
 
-    <header>
-        <h1>Mi Biblioteca de Manga</h1>
-    </header>
-
+<!-- Sección para comprar manga -->
+<?php if (isset($_SESSION['rol']) && ($_SESSION['rol'] === 'lector' || $_SESSION['rol'] === 'usuario')) : ?>
     <section class="content">
-        <h2>Lista de Mangas</h2>
-
-        
-        <?php include('procesar_agregar_manga.php'); ?>
-
+        <h2>Comprar Manga</h2>
+        <?php include('agregar_manga.php'); ?>
     </section>
-
-    <section class="content">
-        <h2>Agregar Manga</h2>
-
-        
-        <form action="" method="post">
-            <label for="titulo">Título:</label>
-            <input type="text" name="titulo" required>
-
-            
-
-            <button type="submit" name="agregar_manga">Agregar Manga</button>
-        </form>
-
-        <?php
-        
-        if (isset($_POST['agregar_manga'])) {
-            include('procesar_agregar_manga.php');
-        }
-        ?>
-    </section>
-
-</body>
-</html>
+<?php endif; ?>

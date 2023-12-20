@@ -1,11 +1,13 @@
-<!-- procesar_agregar_manga.php -->
 <?php
 include('conexion.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los datos del formulario
     $titulo = $_POST['titulo'];
-    // Otros campos del formulario...
+    $autor = $_POST['autor'];
+    $genero = $_POST['genero'];
+    $fecha_publicacion = $_POST['fecha_publicacion'];
+    $descripcion = $_POST['descripcion'];
 
     // Insertar datos en la base de datos
     $sql = "INSERT INTO mangas (titulo, autor, genero, fecha_publicacion, descripcion)
@@ -18,6 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $conn->close();
+} else {
+    // Redirigir si se intenta acceder directamente a este script
+    header('Location: index.php');
+    exit();
 }
 ?>
-//oda//
